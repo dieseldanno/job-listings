@@ -2,13 +2,15 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import { getStoryblokApi } from '@/lib/storyblok';
 import Link from 'next/link';
 
-export default async function JobList({ blok }) {
+export default async function JobList({ blok, query = '', department = '' }) {
 	const storyblokApi = getStoryblokApi();
 
 	const { data } = await storyblokApi.getStories({
 		version: 'draft',
 		starts_with: 'jobs/',
 		content_type: 'job-post',
+		...(query && { search_term: query }),
+		...(department && { filter_query: { department: { in: department } } }),
 	});
 
 	const stories = data.stories;
