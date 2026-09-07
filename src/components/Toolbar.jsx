@@ -3,16 +3,16 @@ import {
 	StoryblokServerComponent,
 } from '@storyblok/react/rsc';
 
-export default function Page({ blok, ...rest }) {
+export default function Toolbar({ blok, ...rest }) {
 	return (
-		<main {...storyblokEditable(blok)}>
-			{blok.body?.map((nestedBlok) => (
+		<div {...storyblokEditable(blok)} className="mb-8 flex flex-wrap gap-3">
+			{blok.blocks?.map((nestedBlok) => (
 				<StoryblokServerComponent
 					blok={nestedBlok}
 					key={nestedBlok._uid}
 					{...rest}
 				/>
 			))}
-		</main>
+		</div>
 	);
 }
