@@ -1,3 +1,4 @@
+import JobList from '@/components/JobList';
 import JobPost from '@/components/JobPost';
 import Page from '@/components/Page';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
@@ -8,6 +9,7 @@ export const getStoryblokApi = storyblokInit({
 	components: {
 		page: Page,
 		'job-post': JobPost,
+		'job-list': JobList,
 	},
 	apiOptions: {
 		/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
