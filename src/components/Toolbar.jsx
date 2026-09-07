@@ -5,7 +5,10 @@ import {
 
 export default function Toolbar({ blok, ...rest }) {
 	return (
-		<div {...storyblokEditable(blok)} className="mb-8 flex flex-wrap gap-3">
+		<div
+			{...storyblokEditable(blok)}
+			className="mx-auto mb-10 flex max-w-3xl flex-wrap items-center gap-4 px-4"
+		>
 			{blok.blocks?.map((nestedBlok) => (
 				<StoryblokServerComponent
 					blok={nestedBlok}
