@@ -1,5 +1,8 @@
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import JobList from '@/components/JobList';
 import JobPost from '@/components/JobPost';
+import NavLink from '@/components/NavLink';
 import Page from '@/components/Page';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 
@@ -10,6 +13,9 @@ export const getStoryblokApi = storyblokInit({
 		page: Page,
 		'job-post': JobPost,
 		'job-list': JobList,
+		'nav-link': NavLink,
+		header: Header,
+		footer: Footer,
 	},
 	apiOptions: {
 		/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
