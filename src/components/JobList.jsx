@@ -6,7 +6,7 @@ export default async function JobList({ blok, query = '', department = '' }) {
 	const storyblokApi = getStoryblokApi();
 
 	const { data } = await storyblokApi.getStories({
-		version: 'draft',
+		version: 'published',
 		starts_with: 'jobs/',
 		content_type: 'job-post',
 		...(query && { search_term: query }),

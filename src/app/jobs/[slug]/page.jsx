@@ -9,7 +9,7 @@ export default async function JobPage({ params }) {
 	let story;
 	try {
 		const { data } = await storyblokApi.get(`cdn/stories/jobs/${slug}`, {
-			version: 'draft',
+			version: 'published',
 		});
 		story = data.story;
 	} catch {
