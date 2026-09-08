@@ -10,7 +10,7 @@ export default function SearchBar({ blok, query = '', department = '' }) {
 		>
 			<input type="hidden" name="department" value={department} />
 			<label htmlFor="search" className="sr-only">
-				{blok.label || 'Sök jobb'}
+				{blok.label || 'Search jobs'}
 			</label>
 			<input
 				type="search"

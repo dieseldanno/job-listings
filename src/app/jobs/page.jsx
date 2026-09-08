@@ -8,7 +8,7 @@ export default async function JobsPage({ searchParams }) {
 
 	const storyblokApi = getStoryblokApi();
 	const { data } = await storyblokApi.get('cdn/stories/jobs/', {
-		version: 'draft',
+		version: 'published',
 	});
 
 	return (
